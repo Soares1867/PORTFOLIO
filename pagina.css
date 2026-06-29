@@ -1,0 +1,28 @@
+//configuração container, titulos e img
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #f4f1ea;
+    min-height: calc(100vh - 80px); /* Subtrai o padding do topo e da base */
+    box-sizing: border-box; /* Garante que o padding seja calculado dentro da largura/altura */
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    font-style: italic;
+    color: #666; /* Uma cor ligeiramente mais suave para o texto alternativo */
+    background-color: #e8e5dd; /* Um fundo sutil para emoldurar o texto alternativo */
+    padding: 15px;
+    border-radius: 4px;
+}
+
+
+h1, h2, h3 {
+    color: #111; /* Um pouco mais escuro para excelente contraste */
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
