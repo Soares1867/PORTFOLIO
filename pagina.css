@@ -1,5 +1,12 @@
-//configuração container, titulos e img
+/*Estetiva da pagina*/
+body {
+    background-color: #f4f4f9; /* Cor das faixas laterais */
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 0.05em; /* Ajusta o espacinho entre as letras */
+    line-height: 1.6;        /* Deixa o espaçamento entre as linhas confortável como o da extensão */
 
+}
 .container {
     max-width: 800px;
     margin: 0 auto;
