@@ -1,0 +1,171 @@
+/* COpiar o estilo da pagina.css*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
+    padding: 2rem 1rem;
+}
+
+.container {
+    max-width: 850px; /* Largura ideal para leitura de crônicas/textos */
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Botaão para voltar, no topo, lateral esquerda.
+    Uma vez apertado, mudar a cor  */
+.cabecalho-sobre {
+    margin-bottom: 3rem;
+}
+
+.btn-voltar {
+    color: #94a3b8;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.btn-voltar:hover {
+    color: #8b5cf6;
+}
+
+/*  .titulo apresentacao{
+    tamanho da fonte
+    Espeçura
+    cor: Branco
+    Empurrar oque vier par baixo
+}
+*/
+.titulo-apresentacao {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+
+
+/*  .titulo historia{
+    tamanho da fonte
+    Espeçura
+    cor: Branco
+    Empurrar oque vier par baixo
+}
+*/
+
+.titulo-historia {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+/*  .subtitulo-subsecao{
+    tamanho da fonte
+    Espeçura
+    cor: roxo
+    Empurrar oque vier par baixo
+}
+*/
+.subtitulo-subsecao {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #8b5cf6; /* Roxo elétrico em destaque */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* paragrafos (p){
+    cor
+    empurrar oque vier para baixo
+    alinhamento do texto
+}
+ */
+p {
+    color: #94a3b8;
+    margin-bottom: 1.2rem;
+    text-align: justify;
+}
+
+/*destaque (em){
+    cor
+    estilo da fonte
+}
+*/
+em {
+    color: #e2e8f0;
+    font-style: italic;
+}
+
+
+
+/*moldura dos blocos
+    quadrado com cor fosca em toda subsecao de interesse
+*/
+.subsecao {
+    margin-bottom: 3rem;
+}
+
+
+.subsecao.interesse {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    backdrop-filter: blur(2px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.subsecao.interesse:hover {
+    transform: translateY(-4px);
+    border-color: rgba(139, 92, 246, 0.2);
+}
+
+/* moldura das imagens
+*/
+.placeholder-foto {
+    background-color: rgba(15, 23, 42, 0.6);
+    border: 1px dashed rgba(148, 163, 184, 0.3);
+    color: #64748b;
+    font-family: monospace;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 3rem 1rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Caixa com habilidades, tipo aqueles de site que fica plavras chaves
+
+*/
+.bloco-habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.tag-habilidade {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    color: #c084fc;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-family: monospace;
+    font-size: 0.9rem;
+}
