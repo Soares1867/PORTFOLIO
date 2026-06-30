@@ -12,29 +12,44 @@
 
     Espaçamento interno nas bordas da tela
 */
-
+body {
+    background-color: #0f172a;
+    color: #cbd5e1;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    padding: 2rem 1rem;
+}
 
 
 /*
 Aqui o container esta configurado por padrão pessoal, que tiro como base um outro projeto meu, dessa forma, alterarei oque for necessario para esse
 */
+
+
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 40px 20px;
-    background-color: #f4f1ea;
-    min-height: calc(100vh - 80px); /* Subtrai o padding do topo e da base */
-    box-sizing: border-box; /* Garante que o padding seja calculado dentro da largura/altura */
+    background-color: rgba(255, 255, 255, 0.05)
 }
-
 
 /*
 .texto-topo
     fonte
     tamanho
     cor
+    espço das letras
     Ele vem no topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
 */
+.texto-topo {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+}
+
+
 
 
 /*
@@ -49,6 +64,19 @@ Aqui o container esta configurado por padrão pessoal, que tiro como base um out
 
 */
 
+.menu-topo {
+    margin-bottom: 5rem;
+}
+.menu-topo a {
+    color: #94a3b8;
+    font-size: 1rem;
+    margin-right: 2rem;
+    transition: color 0.3s ease;
+}
+.menu-topo a:hover {
+    color: #8b5cf6;
+}
+
 
 
 
@@ -61,6 +89,12 @@ Aqui o container esta configurado por padrão pessoal, que tiro como base um out
     Ele vem depois de menu-topo e texto-topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
 */
 
+.boas-vindas {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.1;
+}
 
 
 /* 
@@ -72,12 +106,25 @@ Aqui o container esta configurado por padrão pessoal, que tiro como base um out
     Ele vem depois de menu-topo e texto-topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
 */
 
+.meu-nome {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: #8b5cf6;
+    line-height: 1.1;
+}
 
 /* 
 .manifesto
-    São links
     fonte
     tamanho
     cor
     Ele vem depois de menu-topo e texto-topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
 */
+
+.manifesto {
+    max-width: 600px;
+    font-size: 1.15rem;
+    color: #94a3b8;
+    margin-right: 2rem;
+    margin-bottom: 1.5rem;
+}
