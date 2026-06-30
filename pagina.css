@@ -1,12 +1,23 @@
-/*Estetiva da pagina*/
-body {
-    background-color: #f4f4f9; /* Cor das faixas laterais */
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    letter-spacing: 0.05em; /* Ajusta o espacinho entre as letras */
-    line-height: 1.6;        /* Deixa o espaçamento entre as linhas confortável como o da extensão */
 
-}
+/*
+ .body
+
+    Fundo da página inteira: Escuro
+
+    Cor do textos: A qual ser mais confortavel para o fundo escolhido
+
+    Fonte
+
+    Altura da linha
+
+    Espaçamento interno nas bordas da tela
+*/
+
+
+
+/*
+Aqui o container esta configurado por padrão pessoal, que tiro como base um outro projeto meu, dessa forma, alterarei oque for necessario para esse
+*/
 .container {
     max-width: 800px;
     margin: 0 auto;
@@ -16,20 +27,57 @@ body {
     box-sizing: border-box; /* Garante que o padding seja calculado dentro da largura/altura */
 }
 
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    font-style: italic;
-    color: #666; /* Uma cor ligeiramente mais suave para o texto alternativo */
-    background-color: #e8e5dd; /* Um fundo sutil para emoldurar o texto alternativo */
-    padding: 15px;
-    border-radius: 4px;
-}
+
+/*
+.texto-topo
+    fonte
+    tamanho
+    cor
+    Ele vem no topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
+*/
 
 
-h1, h2, h3 {
-    color: #111; /* Um pouco mais escuro para excelente contraste */
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
-}
+/*
+.menu-topo {
+    São links
+    fonte
+    tamanho
+    cor
+    Ele vem no topo, mas na direita, na mesma linha que o texto-topo, mas na outra extemidade
+    Uma vez com o mause no link, ele passa por uma transição de cor
+    Ele vem no topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
+
+*/
+
+
+
+
+/* 
+.boas-vindas 
+    São links
+    fonte
+    tamanho
+    cor
+    Ele vem depois de menu-topo e texto-topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
+*/
+
+
+
+/* 
+.meu-nome
+    São links
+    fonte
+    tamanho
+    cor
+    Ele vem depois de menu-topo e texto-topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
+*/
+
+
+/* 
+.manifesto
+    São links
+    fonte
+    tamanho
+    cor
+    Ele vem depois de menu-topo e texto-topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
+*/
