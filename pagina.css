@@ -1,41 +1,3 @@
-/*Primeira passada pela IA
--Como colocar uma textura no fundo da tela principal?
-    Resposta:background-image. Uma forma moderna de fazer isso 
-    sem precisar carregar um arquivo de imagem pesado é criar a 
-    textura usando gradientes do próprio CSS.
-Ela me deu alguns modelos. O qual eu tive que alteral alguns parametros por preferencia pessoal.
-
--Como deixar os links ao lado e não embaixo do .texto-top?
-    Resposta:Por padrão, as tags HTML como <div> e <nav> se comportam 
-    como "blocos" empilhados: cada uma exige uma linha inteira e empurra 
-    o que vem depois para baixo. 
-    Para quebrar esse comportamento e colocá-las lado a lado 
-    (uma na extrema esquerda e outra na extrema direita), 
-    nós usamos o Flexbox. 
-    O segredo é criar uma "caixa mãe" no HTML para envelopar as duas.
-    Estrutura:
-    .cabecalho-topo {
-        display: flex;                 //Ativa o modo Flexbox 
-        justify-content: space-between; //Empurra o texto para a esquerda e o menu para a direita
-        align-items: center;            // Alinha os dois perfeitamente no meio (na vertical)
-        margin-bottom: 5rem;            //Deixa um espaço confortável antes de começar o "OIII!"
-    }
-Vou usar essa ideia para colocar o manifesto ao lado do texto e boa vinda e não abaixo
-*/
-
-/*
- .body
-
-    Fundo da página inteira: Escuro
-
-    Cor do textos: A qual ser mais confortavel para o fundo escolhido
-
-    Fonte
-
-    Altura da linha
-
-    Espaçamento interno nas bordas da tela
-*/
 body {
     background-color: #0f172a;
     color: #cbd5e1;
@@ -44,10 +6,6 @@ body {
     padding: 2rem 1rem;
 }
 
-
-/*
-Aqui o container esta configurado por padrão pessoal, que tiro como base um outro projeto meu, dessa forma, alterarei oque for necessario para esse
-*/
 
 
 .container {
@@ -59,36 +17,16 @@ Aqui o container esta configurado por padrão pessoal, que tiro como base um out
     background-size: 20px 20px;
 }
 
-/*
-.texto-topo
-    fonte
-    tamanho
-    cor
-    espço das letras
-    Ele vem no topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
-*/
+
 .texto-topo {
     font-family: monospace;
     font-size: 0.9rem;
     color: #94a3b8;
     letter-spacing: 2px;
-    margin-bottom: 1.5rem;
+    text-transform: uppercase;
 }
 
 
-
-
-/*
-.menu-topo {
-    São links
-    fonte
-    tamanho
-    cor
-    Ele vem no topo, mas na direita, na mesma linha que o texto-topo, mas na outra extemidade
-    Uma vez com o mause no link, ele passa por uma transição de cor
-    Ele vem no topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
-
-*/
 
 .cabecalho-topo {
         display: flex;               
@@ -127,14 +65,6 @@ Aqui o container esta configurado por padrão pessoal, que tiro como base um out
     flex-shrink: 0; /* Impede que o manifesto esmague o tamanho das suas letras grandes */
 }
 
-/* 
-.boas-vindas 
-    São links
-    fonte
-    tamanho
-    cor
-    Ele vem depois de menu-topo e texto-topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
-*/
 
 .boas-vindas {
     font-size: 4.5rem;
@@ -144,22 +74,8 @@ Aqui o container esta configurado por padrão pessoal, que tiro como base um out
 }
 
 
-/* 
-.meu-nome
-    São links
-    fonte
-    tamanho
-    cor
-    Ele vem depois de menu-topo e texto-topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
-*/
 
 
-.estrutura-frase-inicio{
-    display: flex;               
-    justify-content: space-between; 
-    align-items: center;   
-    margin-bottom: 5rem;  
-}
 
 .meu-nome {
     font-size: 4.5rem;
@@ -168,16 +84,10 @@ Aqui o container esta configurado por padrão pessoal, que tiro como base um out
     line-height: 1.1;
 }
 
-/* 
-.manifesto
-    fonte
-    tamanho
-    cor
-    Ele vem depois de menu-topo e texto-topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
-*/
+
 
 .manifesto {
-    max-width: 600px;
+    max-width: 400px;
     font-size: 1.15rem;
     color: #94a3b8;
     margin-right: 2rem;
