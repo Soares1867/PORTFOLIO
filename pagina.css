@@ -1,3 +1,27 @@
+/*Primeira passada pela IA
+-Como colocar uma textura no fundo da tela principal?
+    Resposta:background-image. Uma forma moderna de fazer isso 
+    sem precisar carregar um arquivo de imagem pesado é criar a 
+    textura usando gradientes do próprio CSS.
+Ela me deu alguns modelos. O qual eu tive que alteral alguns parametros por preferencia pessoal.
+
+-Como deixar os links ao lado e não embaixo do .texto-top?
+    Resposta:Por padrão, as tags HTML como <div> e <nav> se comportam 
+    como "blocos" empilhados: cada uma exige uma linha inteira e empurra 
+    o que vem depois para baixo. 
+    Para quebrar esse comportamento e colocá-las lado a lado 
+    (uma na extrema esquerda e outra na extrema direita), 
+    nós usamos o Flexbox. 
+    O segredo é criar uma "caixa mãe" no HTML para envelopar as duas.
+    Estrutura:
+    .cabecalho-topo {
+        display: flex;                 //Ativa o modo Flexbox 
+        justify-content: space-between; //Empurra o texto para a esquerda e o menu para a direita
+        align-items: center;            // Alinha os dois perfeitamente no meio (na vertical)
+        margin-bottom: 5rem;            //Deixa um espaço confortável antes de começar o "OIII!"
+    }
+Vou usar essa ideia para colocar o manifesto ao lado do texto e boa vinda e não abaixo
+*/
 
 /*
  .body
@@ -30,7 +54,9 @@ Aqui o container esta configurado por padrão pessoal, que tiro como base um out
     max-width: 1000px;
     margin: 0 auto;
     padding: 40px 20px;
-    background-color: rgba(255, 255, 255, 0.05)
+    background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 20px 20px;
 }
 
 /*
@@ -64,9 +90,13 @@ Aqui o container esta configurado por padrão pessoal, que tiro como base um out
 
 */
 
-.menu-topo {
-    margin-bottom: 5rem;
+.cabecalho-topo {
+        display: flex;               
+        justify-content: space-between; 
+        align-items: center;   
+        margin-bottom: 5rem;                  
 }
+
 .menu-topo a {
     color: #94a3b8;
     font-size: 1rem;
@@ -79,6 +109,23 @@ Aqui o container esta configurado por padrão pessoal, que tiro como base um out
 
 
 
+
+
+
+.estrutura-frase-inicio {
+    display: flex;               
+    justify-content: space-between; 
+    align-items: center;   
+    gap: 3rem; /* Cria um espaço seguro entre o seu nome e o manifesto para eles nunca trombarem */
+    margin-bottom: 5rem;  
+}
+
+/* Nova regra: Força o "OIII!" e o "Meu nome é..." a ficarem empilhados em formato de coluna */
+.bloco-esquerda {
+    display: flex;
+    flex-direction: column; 
+    flex-shrink: 0; /* Impede que o manifesto esmague o tamanho das suas letras grandes */
+}
 
 /* 
 .boas-vindas 
@@ -106,6 +153,14 @@ Aqui o container esta configurado por padrão pessoal, que tiro como base um out
     Ele vem depois de menu-topo e texto-topo, preciso colocar um espaço entre ele oque vem depois (abaixo dele)
 */
 
+
+.estrutura-frase-inicio{
+    display: flex;               
+    justify-content: space-between; 
+    align-items: center;   
+    margin-bottom: 5rem;  
+}
+
 .meu-nome {
     font-size: 4.5rem;
     font-weight: 800;
@@ -128,3 +183,4 @@ Aqui o container esta configurado por padrão pessoal, que tiro como base um out
     margin-right: 2rem;
     margin-bottom: 1.5rem;
 }
+
