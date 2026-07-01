@@ -94,3 +94,198 @@ body {
     margin-bottom: 1.5rem;
 }
 
+
+
+
+
+
+
+/*Parte 2 da pagina principal*/
+/*
+   ESTRUTURA BASE DOS RETÂNGULOS (O que todos compartilham) */
+
+
+/*
+    Todo retangulo-projeto vai ter um caixa translucida.
+    Fundo quase invisivel
+    Borda fina e aredondada.
+    Texto centralizado
+    Transição
+    Empurra o proximo bloco
+*/
+
+/* Este seletor pega qualquer classe que comece com "retangulo-projeto-" */
+[class^="retangulo-projeto-"] {
+    background: rgba(255, 255, 255, 0.02); /* Fundo branco quase invisível (2% de opacidade) */
+    border: 1px solid rgba(255, 255, 255, 0.05); /* Borda fina ao redor com 5% de opacidade */
+    border-radius: 8px;                    /* Arredonda os cantos dos retângulos em 8 pixels */
+    padding: 2rem;                         /* Espaçamento interno para o texto não colar na borda */
+    margin-bottom: 2rem;                   /* Distância de 2rem entre um bloco e o bloco de baixo */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave e ritmada para os efeitos do hover */
+}
+
+
+/*
+    Tamanho da força
+    Negrito
+    Empurra o texto para baixo
+    Espaço da letras
+    Maiusculo
+*/
+
+
+/* Formatação do título de cada projeto */
+.titulo-projeto {
+    font-size: 1.25rem;                    /* Tamanho da fonte do título */
+    font-weight: bold;                     /* Deixa a fonte em negrito */
+    margin-bottom: 1rem;                   /* Espaço de 1rem entre o título e o texto de descrição */
+    letter-spacing: 1px;                   /* Aumenta o espaço horizontal entre as letras do título */
+    text-transform: uppercase;             /* Força todas as letras a ficarem em MAIÚSCULO */
+}
+
+
+
+/*
+    Tamanho da força
+    Altura da linha
+    Cor
+    Deixa o texto na metade esquerda 
+*/
+/* Formatação do bloco de texto descritivo */
+.texto-projeto {
+    font-size: 0.95rem;                    /* Tamanho da fonte levemente menor para melhor hierarquia */
+    line-height: 1.6;                      /* Altura da linha (espaçamento entre linhas de leitura) */
+    color: #94a3b8;                        /* Cor cinza clara (ardósia) que não cansa os olhos no dark mode */
+    width: 50%;
+}
+
+
+/*
+   1. EXTENSÃO CHROME (Estética Cyber-Azul)
+ */
+
+
+/* Efeito quando o mouse passa por cima do bloco da Extensão */
+.retangulo-projeto-extensao:hover {
+    border-color: #22d3ee;                 /* Clarea a cor da barra lateral esquerda */
+    background: linear-gradient(90deg, rgba(6, 182, 212, 0.05) 0%, rgba(0, 0, 0, 0) 100%); /* Gradiente azul sutil para dentro do card */
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.15); /* Cria um efeito de brilho neon azulado em volta do bloco */
+    transform: translateX(4px);            /* Empurra o bloco levemente 4px para a direita */
+}
+
+/* Aplica cor ao título da extensão */
+.retangulo-projeto-extensao .titulo-projeto {
+    color: #22d3ee;                        /* Deixa o título em tom azul neon */
+}
+
+
+/* 
+   2. SITE INTERATIVO (Estética Laranja Tech)
+*/
+
+/* Efeito quando o mouse passa por cima do bloco do Site */
+.retangulo-projeto-site:hover {
+    border-color: #fb923c;                 /* Clarea a cor da barra lateral laranja */
+    background: linear-gradient(90deg, rgba(249, 115, 22, 0.05) 0%, rgba(0, 0, 0, 0) 100%); /* Gradiente laranja sutil para dentro */
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.15); /* Cria um efeito de brilho neon laranja em volta */
+    transform: translateX(4px);            /* Empurra o bloco levemente 4px para a direita */
+}
+
+/* Aplica cor ao título do site */
+.retangulo-projeto-site .titulo-projeto {
+    color: #fb923c;                        /* Deixa o título em tom laranja claro */
+}
+
+
+/* 
+   3. ANÁLISE DE DADOS (Estética Vermelho de Alerta / Em Progresso)
+ */
+
+
+/* Efeito quando o mouse passa por cima do bloco de Dados */
+.retangulo-projeto-dados:hover {
+    opacity: 1;                            /* Faz o card acender com 100% de cor quando focado */
+    border-color: #f87171;                 /* Clarea a barra lateral vermelha */
+    background: linear-gradient(90deg, rgba(239, 68, 68, 0.05) 0%, rgba(0, 0, 0, 0) 100%); /* Gradiente vermelho sutil */
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.15); /* Cria um brilho neon vermelho em volta */
+    transform: translateX(4px);            /* Empurra o bloco levemente 4px para a direita */
+}
+
+/* Aplica cor ao título de análise de dados */
+.retangulo-projeto-dados .titulo-projeto {
+    color: #f87171;                        /* Deixa o título em tom vermelho claro */
+}
+
+
+/* 
+   4. CARDÁPIO DE EXERCÍCIOS (Estética Amarelo Terminal / Código C)
+*/
+
+/* Efeito quando o mouse passa por cima do bloco de Exercícios */
+.retangulo-projeto-exercicios:hover {
+    border-color: #facc15;                 /* Clarea a barra lateral amarela */
+    background: linear-gradient(90deg, rgba(234, 179, 8, 0.05) 0%, rgba(0, 0, 0, 0) 100%); /* Gradiente amarelo sutil */
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.15); /* Cria um brilho neon amarelo em volta */
+    transform: translateX(4px);            /* Empurra o bloco levemente 4px para a direita */
+}
+
+/* customização do título dos exercícios */
+.retangulo-projeto-exercicios .titulo-projeto {
+    font-family: 'Courier New', Courier, monospace; /* Força uma fonte estilo máquina de escrever/terminal de código */
+    color: #facc15;                        /* Deixa o título em tom amarelo brilhante */
+}
+
+/* Pseudo-elemento que injeta um caractere decorativo depois do título */
+.retangulo-projeto-exercicios .titulo-projeto::after {
+    content: "_";                          /* Insere um caractere Underline após o texto */
+    animation: piscaCursor 1s infinite;    /* Executa a animação "piscaCursor" infinitamente a cada 1 segundo */
+}
+
+
+/* 
+   5. PROJETOS MACKENZIE (Estética Roxo Principal do Site)
+*/
+
+
+/* Efeito quando o mouse passa por cima do bloco Mackenzie */
+.retangulo-projeto-mackenzie:hover {
+    border-color: #c084fc;                 /* Clarea a barra lateral roxa */
+    background: linear-gradient(90deg, rgba(168, 85, 247, 0.05) 0%, rgba(0, 0, 0, 0) 100%); /* Gradiente roxo sutil */
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.15); /* Cria o brilho neon roxo que combina com o tema principal */
+    transform: translateX(4px);            /* Empurra o bloco levemente 4px para a direita */
+}
+
+/* Aplica cor ao título do bloco Mackenzie */
+.retangulo-projeto-mackenzie .titulo-projeto {
+    color: #c084fc;                        /* Deixa o título em tom roxo claro */
+}
+
+
+/*
+   6. CIRCUITOS ELÉTRICOS (Estética Verde Elétrico / Hardware)
+*/
+
+
+/* Efeito quando o mouse passa por cima do bloco de Circuitos */
+.retangulo-projeto-circuitos:hover {
+    border-color: #34d399;                 /* Clarea a barra lateral verde */
+    background: linear-gradient(90deg, rgba(16, 185, 129, 0.05) 0%, rgba(0, 0, 0, 0) 100%); /* Gradiente verde simulando condução de energia */
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.15); /* Cria um brilho neon verde/hardware ao redor */
+    transform: translateX(4px);            /* Empurra o bloco levemente 4px para a direita */
+}
+
+/* Aplica cor ao título de circuitos */
+.retangulo-projeto-circuitos .titulo-projeto {
+    color: #34d399;                        /* Deixa o título em tom verde elétrico */
+}
+
+
+/* ==========================================================================
+   ANIMAÇÕES (Lógica de movimentação matemática do CSS)
+   ========================================================================== */
+
+/* Regra que cria os quadros de animação para o cursor de terminal piscar */
+@keyframes piscaCursor {
+    0%, 100% { opacity: 0; }               /* No início (0%) e fim (100%) o caractere fica invisível */
+    50% { opacity: 1; }                    /* No meio do tempo (50%) o caractere fica totalmente visível */
+}
