@@ -122,6 +122,19 @@ body {
     padding: 2rem;                         /* Espaçamento interno para o texto não colar na borda */
     margin-bottom: 2rem;                   /* Distância de 2rem entre um bloco e o bloco de baixo */
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave e ritmada para os efeitos do hover */
+
+    /* 🎛️ O comando que faltava para colocar Esquerda e Direita lado a lado: */
+    display: flex;                         
+    align-items: center;                   /* Alinha verticalmente o texto e as fotos pelo centro */
+    gap: 2rem;                             /* Dá uma distância de segurança entre o texto e as fotos */
+    perspective: 1000px;                   /* Ativa a profundidade 3D para as fotos flutuarem */
+}
+
+
+/* CAIXA DA ESQUERDA: Controla o bloco de texto para ocupar metade do retângulo */
+.retangulo-esquerda {
+    width: 50%;                            /* Trava o seu texto ocupando a metade esquerda interna */
+    flex-shrink: 0;                        /* Impede as fotos de esmagarem a largura do texto */
 }
 
 
@@ -156,7 +169,6 @@ body {
     font-size: 0.95rem;                    /* Tamanho da fonte levemente menor para melhor hierarquia */
     line-height: 1.6;                      /* Altura da linha (espaçamento entre linhas de leitura) */
     color: #94a3b8;                        /* Cor cinza clara (ardósia) que não cansa os olhos no dark mode */
-    width: 50%;
 }
 
 
@@ -288,4 +300,116 @@ body {
 @keyframes piscaCursor {
     0%, 100% { opacity: 0; }               /* No início (0%) e fim (100%) o caractere fica invisível */
     50% { opacity: 1; }                    /* No meio do tempo (50%) o caractere fica totalmente visível */
+}
+
+
+
+/*====================
+PARA AS FOTOS DO PROJETO
+======================*/
+
+/*
+Espaço onde vão estar as fotos
+-espaçamento na tela
+*/
+.retangulo-direita {
+    width: 50%;                            /* Define que essa área ocupa metade (50%) do bloco principal */
+    height: 150px;                         /* Dá uma altura limite para esse espaço na tela */
+    display: flex;                         /* Ativa o flex para alinhar o carrossel aqui dentro */
+    justify-content: center;               /* Centraliza as fotos horizontalmente no espaço delas */
+    align-items: center;                   /* Centraliza as fotos verticalmente no espaço delas */
+    position: relative;                    /* Cria o ponto de partida para as fotos flutuarem em cima umas das outras */
+}
+
+/*
+Elementos que ficam na frente das fotos, no estilo jarvis
+-elementos graficos
+-cor violeta ou azul
+-tamanho
+-espaçamento
+*/
+.interface-stark {
+    /* -tamanho e -espaçamento: */
+    position: absolute;                    /* Gruda a placa de efeito por cima de tudo */
+    top: 0; left: 0; right: 0; bottom: 0; /* Estica o efeito para cobrir 100% do tamanho da foto */
+    border-radius: 4px;                    /* Mantém as bordinhas arredondadas iguais às da foto */
+    z-index: 2;                            /* Força essa placa a ficar fisicamente na frente da imagem */
+    pointer-events: none;                  /* Faz o mouse "atravessar" o efeito e conseguir interagir com a foto */
+
+    /* -elementos graficos e -cor violeta ou azul: */
+    background: linear-gradient(
+        rgba(34, 211, 238, 0.08) 50%,     /* Linha Azul Cyan do Jarvis (8% de opacidade) */
+        rgba(0, 0, 0, 0) 50%               /* Linha transparente para dar o contraste */
+    );
+    background-size: 100% 4px;             /* Define que essas linhas gráficas se repetem a cada 4px na tela */
+}
+
+
+
+/*
+A moldura física que segura cada foto e faz o efeito 3D do Windows Vista
+- tamanho fixo da foto
+- rotação de lado e profundidade (3D)
+*/
+.d1 {
+    position: absolute;                    /* Permite empilhar as fotos no mesmo lugar */
+    width: 180px;                          /* Define a largura padrão de cada tela flutuante */
+    height: 110px;                         /* Define a altura padrão de cada tela flutuante */
+    transition: all 0.4s ease;             /* Deixa o movimento de rotação e foco suave */
+    cursor: pointer;
+}
+
+
+
+/* Configuração da imagem real dentro da moldura */
+.d1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;                     /* Corta a imagem sem distorcer para encaixar na moldura */
+    border-radius: 4px;
+    opacity: 0.7;                          /* Opacidade de holograma */
+}
+
+
+/* ==========================================================================
+   DISTRIBUIÇÃO INDIVIDUAL DO FLIP 3D (Efeito Windows Vista)
+   ========================================================================== */
+/* ==========================================================================
+   ESTADOS DINÂMICOS DO CARROSSEL 3D (As vagas no espaço)
+   ========================================================================== */
+
+/* Vaga da frente (Destaque total) */
+.posicao-frente {
+    transform: rotateY(-25deg) translateZ(40px) translateX(-15px);
+    z-index: 3;
+    opacity: 1;
+}
+
+/* Vaga do meio */
+.posicao-meio {
+    transform: rotateY(-25deg) translateZ(0px) translateX(25px) translateY(-10px);
+    z-index: 2;
+    opacity: 0.6;
+}
+
+/* Vaga de trás (Quase sumindo) */
+.posicao-tras {
+    transform: rotateY(-25deg) translateZ(-40px) translateX(65px) translateY(-20px);
+    z-index: 1;
+    opacity: 0.2;
+}
+
+/* ==========================================================================
+   AÇÃO DO HOVER INDIVIDUAL NAS FOTOS
+   ========================================================================== */
+.d1:hover {
+    transform: rotateY(0deg) translateZ(60px) translateX(-10px) !important; /* Desinclina e joga para a frente */
+    z-index: 10 !important;                /* Salta para a frente de todas as outras imagens */
+    opacity: 1 !important;                 /* Ganha nitidez total */
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.4); /* Acende o brilho neon ao focar */
+}
+
+/* Força as imagens de dentro a ficarem 100% nítidas no hover */
+.d1:hover img {
+    opacity: 1 !important;
 }
